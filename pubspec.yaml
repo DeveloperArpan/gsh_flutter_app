@@ -40,6 +40,7 @@ dependencies:
   json_serializable: ^2.0.0
   progress_dialog: ^1.2.4
   hexcolor: ^3.0.1
+  flutter_slider_drawer: ^2.1.1
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -65,7 +66,6 @@ flutter:
   assets:
 
     - assets/images/icons/menu_ic.png
-    - assets/images/icons/bell_icon.png
     - assets/images/icons/bell_icon.png
     - assets/images/icons/banner.png
     - assets/images/icons/F_Home.png

@@ -22,6 +22,7 @@ class _ProductPageState extends State<ProductPage> {
   TextEditingController searchingController = TextEditingController();
   int pageIndex = 0;
   int ITEMIID=0;
+  var size,height,width;
   final pages = [
     const Page1(),
     const Page2(),
@@ -276,6 +277,10 @@ class _ProductPageState extends State<ProductPage> {
   }
   @override
   Widget build(BuildContext context) {
+    size = MediaQuery.of(context).size;
+    height = size.height;
+    width = size.width;
+
     return Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.white,
@@ -300,12 +305,15 @@ class _ProductPageState extends State<ProductPage> {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Container(
-                child: Text("All Products",
-                    style: TextStyle(
-                      fontSize: 24.0,
-                      fontWeight: FontWeight.bold,
-                      color:HexColor("#3D3CB3"),
-                    )
+                alignment: Alignment.centerRight,
+                child: Center(
+                  child: Text("All Products",
+                      style: TextStyle(
+                        fontSize: 24.0,
+                        fontWeight: FontWeight.bold,
+                        color:HexColor("#3D3CB3"),
+                      )
+                  ),
                 ),
               ),
             )
@@ -379,20 +387,19 @@ class _ProductPageState extends State<ProductPage> {
                                  //
                                  // Row(
                                  //   children:<Widget> [
-                                 //     // Container(
-                                 //     //   width: 30,
-                                 //     //     height: 40.0,
-                                 //     //    child: Text(
-                                 //     //       'All',
-                                 //     //       style: const TextStyle(color: Colors.black, fontSize: 10),
-                                 //     //     )
-                                 //     // ),
+                                 //     Container(
+                                 //         width:width*.10,
+                                 //        child: Text(
+                                 //           'All',
+                                 //           style: const TextStyle(color: Colors.black, fontSize: 10),
+                                 //         )
+                                 //     ),
                                  //
                                  //   ],
-                                 // )
+                                 // ),
                                 Container(
-                                  width: double.infinity,
-                                  height: 50.0,
+                                  width:width*.80,
+                                  height: height*.1,
                                   child: ListView.builder(
                                     shrinkWrap: true,
                                     scrollDirection: Axis.horizontal,
